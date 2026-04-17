@@ -1,0 +1,67 @@
+{
+  "skill_name": "wallet-pass",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I need to create an event ticket for a music concert at Madison Square Garden on September 15, 2024. The ticket should work on both Apple Wallet and Google Wallet. Include seat G12, section Floor, gate A. The barcode should be a QR code with value TKT-001234. Generate the Node.js/TypeScript code for both platforms.",
+      "expected_output": "Complete TypeScript code for both Apple (.pkpass via passkit-generator) and Google (class + object + JWT) event ticket passes with correct field placement, barcode config, and venue/date details.",
+      "files": [],
+      "expectations": [
+        "Output contains Apple Wallet pass code using passkit-generator or equivalent Node.js library",
+        "Output contains Google Wallet EventTicketClass and EventTicketObject creation code",
+        "Apple pass uses eventTicket type (not generic or other type)",
+        "Google pass uses EventTicketClass/EventTicketObject (not Generic)",
+        "Barcode is QR format on both platforms (PKBarcodeFormatQR for Apple, QR_CODE for Google)",
+        "Barcode value TKT-001234 is present for both platforms",
+        "Seat G12 is included in both passes",
+        "Section Floor is included in both passes",
+        "Gate A is included in both passes",
+        "Madison Square Garden venue name appears in both passes",
+        "September 15 2024 date is present in both passes",
+        "Google code includes JWT signing or save URL generation",
+        "Apple code includes pass signing or .pkpass generation"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Create an Apple Wallet store card for a coffee shop loyalty program. The member's name is Jane Smith, member ID LY-789456, Gold tier with 2450 points. Include a QR barcode. The pass should use dark blue background with white text. Give me the complete pass.json and the signing code using passkit-generator.",
+      "expected_output": "Complete pass.json for a storeCard type Apple Wallet pass with correct field placement, plus passkit-generator signing code.",
+      "files": [],
+      "expectations": [
+        "Pass type is storeCard (not generic or other)",
+        "Member name Jane Smith appears in the pass fields",
+        "Member ID LY-789456 appears in the pass fields",
+        "Gold tier is included in the pass fields",
+        "Points value 2450 is included in the pass fields",
+        "Barcode format is PKBarcodeFormatQR",
+        "Background color is a dark blue RGB value",
+        "Foreground color is white rgb(255, 255, 255) or similar",
+        "passkit-generator library is used for signing",
+        "formatVersion is set to 1",
+        "pass.json includes passTypeIdentifier, serialNumber, teamIdentifier, organizationName, description"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Generate a Google Wallet transit pass for a round-trip train ticket. Origin: Grand Central Terminal (GCT), Destination: Penn Station (PEN). Departure at 2024-10-01T08:30, arrival 2024-10-01T09:15. Economy class, seat 42, coach 10. Include the class and object creation code plus the JWT save URL generation.",
+      "expected_output": "Complete TypeScript code for a Google Wallet TransitClass and TransitObject with correct transit-specific fields, plus JWT generation.",
+      "files": [],
+      "expectations": [
+        "Uses TransitClass and TransitObject (not Generic or Flight)",
+        "Transit type is RAIL (not BUS or other)",
+        "Trip type is ROUND_TRIP",
+        "Origin station includes Grand Central Terminal or GCT",
+        "Destination station includes Penn Station or PEN",
+        "Departure datetime 2024-10-01T08:30 is present",
+        "Arrival datetime 2024-10-01T09:15 is present",
+        "Fare class is ECONOMY",
+        "Seat number 42 is present",
+        "Coach/carriage 10 is present",
+        "Code includes TransitClass creation with insert call",
+        "Code includes TransitObject creation with insert call",
+        "JWT signing code with RS256 algorithm is present",
+        "Save URL generation (pay.google.com/gp/v/save/) is present"
+      ]
+    }
+  ]
+}
