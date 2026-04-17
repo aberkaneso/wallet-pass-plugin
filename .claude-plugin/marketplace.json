@@ -1,5 +1,14 @@
 {
   "name": "wallet-pass-marketplace",
   "description": "Wallet pass knowledge plugins",
-  "plugins": ["wallet-pass"]
+  "owner": {
+    "name": "aberkaneso"
+  },
+  "plugins": [
+    {
+      "name": "wallet-pass",
+      "source": ".",
+      "description": "Complete Apple Wallet and Google Wallet pass structure knowledge — types, fields, images, barcodes, visual layout, and cross-platform differences."
+    }
+  ]
 }
