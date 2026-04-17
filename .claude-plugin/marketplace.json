@@ -1,0 +1,5 @@
+{
+  "name": "wallet-pass-marketplace",
+  "description": "Wallet pass knowledge plugins",
+  "plugins": ["wallet-pass"]
+}
