@@ -1,14 +1,19 @@
 {
-  "name": "wallet-pass-marketplace",
-  "description": "Wallet pass knowledge plugins",
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "wallet-pass-plugin",
+  "description": "Complete Apple Wallet and Google Wallet pass structure knowledge",
   "owner": {
-    "name": "aberkaneso"
+    "name": "aberkaneso",
+    "email": "213eek@gmail.com"
   },
   "plugins": [
     {
       "name": "wallet-pass",
-      "source": ".",
-      "description": "Complete Apple Wallet and Google Wallet pass structure knowledge — types, fields, images, barcodes, visual layout, and cross-platform differences."
+      "description": "Complete Apple Wallet and Google Wallet pass structure knowledge — types, fields, images, barcodes, visual layout, and cross-platform differences.",
+      "source": {
+        "source": "github",
+        "repo": "aberkaneso/wallet-pass-plugin"
+      }
     }
   ]
 }
